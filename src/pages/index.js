@@ -86,15 +86,18 @@ export default function Home() {
         const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
         heroTl
-          .from(badgeRef.current, {
-            opacity: 0, y: 18, filter: 'blur(8px)', duration: 0.65,
-          }, 0.2)
-          .from(titleRef.current.querySelectorAll('[data-line]'), {
-            yPercent: 115, opacity: 0, stagger: 0.14, duration: 0.9,
-          }, 0.46)
-          .from(subRef.current, {
-            opacity: 0, y: 24, duration: 0.72,
-          }, 0.82)
+          .fromTo(badgeRef.current,
+            { opacity: 0, y: 18, filter: 'blur(8px)' },
+            { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.65 },
+          0.2)
+          .fromTo(titleRef.current.querySelectorAll('[data-line]'),
+            { yPercent: 115, opacity: 0 },
+            { yPercent: 0, opacity: 1, stagger: 0.14, duration: 0.9 },
+          0.46)
+          .fromTo(subRef.current,
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.72 },
+          0.82)
           .to(ctasRef.current, {
             opacity: 1, duration: 0.7,
           }, 1.05);
@@ -155,23 +158,23 @@ export default function Home() {
         {/* ── Hero photo ── */}
         <div ref={heroRef} className={styles.heroWrap}>
           <div data-hero-content className='xl:max-w-[1200px]'>
-            <span ref={badgeRef} className={styles.heroBadge}>
+            <span ref={badgeRef} className={styles.heroBadge} style={{opacity:0}}>
               <span className={styles.heroBadgeDot} />
               Guide d'utilisation
             </span>
 
             <h1 ref={titleRef} className={`${styles.heroTitle}`}>
               <span className={styles.titleLineWrap}>
-                <span data-line className={styles.titleLine}>Partagez votre ville.</span>
+                <span data-line className={styles.titleLine} style={{opacity:0}}>Partagez votre ville.</span>
               </span>
               <span className={styles.titleLineWrap}>
-                <span data-line className={`${styles.titleLine} ${styles.heroTitleMuted}`}>
+                <span data-line className={`${styles.titleLine} ${styles.heroTitleMuted}`} style={{opacity:0}}>
                   Explorez la leur.
                 </span>
               </span>
             </h1>
 
-            <p ref={subRef} className={styles.heroSub}>
+            <p ref={subRef} className={styles.heroSub} style={{opacity:0}}>
               Nomu connecte voyageurs et locaux basés sur leurs vraies affinités.
               Fini les guides génériques — des rencontres humaines, authentiques.
             </p>
