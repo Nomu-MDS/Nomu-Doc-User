@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Fragment } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
@@ -95,8 +95,8 @@ export default function Home() {
           .from(subRef.current, {
             opacity: 0, y: 24, duration: 0.72,
           }, 0.82)
-          .from(Array.from(ctasRef.current.children), {
-            opacity: 0, y: 14, stagger: 0.13, duration: 0.6,
+          .to(ctasRef.current, {
+            opacity: 1, duration: 0.7,
           }, 1.05);
 
         // Parallax hero au scroll
@@ -176,7 +176,7 @@ export default function Home() {
               Fini les guides génériques — des rencontres humaines, authentiques.
             </p>
 
-            <div ref={ctasRef} className={styles.heroCtas}>
+            <div ref={ctasRef} className={styles.heroCtas} style={{opacity: 0}}>
               <Link to="/docs/intro" className={styles.ctaPrimary}>
                 Commencer le guide
                 <ArrowIcon />
@@ -200,29 +200,32 @@ export default function Home() {
           <div ref={timelineRef} className={styles.timeline}>
             <div ref={lineRef} className={styles.timelineLine} />
 
-            {steps.map((s, i) => (
-              <Link
-                key={s.to}
-                to={s.to}
-                data-item
-                className={`${styles.timelineItem} ${s.featured ? styles.timelineItemFeatured : ''}`}
-              >
+            {steps.map((s) => (
+              <Fragment key={s.to}>
+                {/* Colonne 1 : dot */}
                 <div
                   data-dot
                   className={`${styles.timelineDot} ${s.featured ? styles.timelineDotFeatured : ''}`}
                 />
-                <div className={styles.timelineBody}>
-                  {s.featured
-                    ? <span className={styles.timelineEyebrow}>{s.eyebrow}</span>
-                    : <span className={styles.timelineNum}>{s.num}</span>
-                  }
-                  <h3 className={styles.timelineTitle}>{s.label}</h3>
-                  <p className={styles.timelineDesc}>{s.desc}</p>
-                </div>
-                <span className={styles.timelineArrow}>
-                  <ArrowIcon />
-                </span>
-              </Link>
+                {/* Colonne 2 : item cliquable */}
+                <Link
+                  to={s.to}
+                  data-item
+                  className={`${styles.timelineItem} ${s.featured ? styles.timelineItemFeatured : ''}`}
+                >
+                  <div className={styles.timelineBody}>
+                    {s.featured
+                      ? <span className={styles.timelineEyebrow}>{s.eyebrow}</span>
+                      : <span className={styles.timelineNum}>{s.num}</span>
+                    }
+                    <h3 className={styles.timelineTitle}>{s.label}</h3>
+                    <p className={styles.timelineDesc}>{s.desc}</p>
+                  </div>
+                  <span className={styles.timelineArrow}>
+                    <ArrowIcon />
+                  </span>
+                </Link>
+              </Fragment>
             ))}
           </div>
         </div>

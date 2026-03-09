@@ -88,7 +88,7 @@
 }
 
 .heroTitleMuted {
-  color: rgba(228, 219, 203, 0.5);
+  color: white;
 }
 
 .heroSub {
@@ -119,7 +119,7 @@
   font-size: 0.875rem;
   padding: 0.875rem 1.875rem;
   border-radius: 9999px;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
 }
 
@@ -127,6 +127,7 @@
   background: #fff;
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
 .ctaSecondary {
@@ -198,37 +199,54 @@
 
 /* ─── Timeline ────────────────────────────────── */
 .timeline {
+  display: grid;
+  grid-template-columns: 28px 1fr;
   position: relative;
 }
 
 .timelineLine {
   position: absolute;
-  left: 17px;
-  top: 14px;
-  bottom: 14px;
+  left: 13px;
+  top: 8px;
+  bottom: 8px;
   width: 1.5px;
   background: rgba(70, 94, 138, 0.18);
   transform-origin: top center;
+  pointer-events: none;
 }
 
 :global([data-theme='dark']) .timelineLine {
   background: rgba(125, 164, 216, 0.15);
 }
 
-.timelineItem {
-  display: grid;
-  grid-template-columns: 36px 1fr auto;
-  gap: 1.5rem;
-  align-items: start;
-  padding: 0.75rem 1rem 2rem 0;
-  text-decoration: none !important;
-  border-radius: 14px;
-  transition: background 0.2s;
+/* ─── Dot — colonne 1 ─────────────────────────── */
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #465E8A;
+  justify-self: center;
+  align-self: start;
+  margin-top: 14px;
   position: relative;
+  z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, box-shadow 0.2s;
 }
 
-.timelineItem:last-child {
-  padding-bottom: 0.75rem;
+/* ─── Item — colonne 2 ────────────────────────── */
+.timelineItem {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 0.6rem 0.875rem 1.5rem 1rem;
+  border-radius: 14px;
+  text-decoration: none !important;
+  transition: background 0.2s;
+  min-width: 0;
+}
+
+.timelineItem:last-of-type {
+  padding-bottom: 0.6rem;
 }
 
 .timelineItem:hover {
@@ -240,50 +258,40 @@
 }
 
 .timelineItemFeatured {
-  margin-bottom: 0.5rem;
-}
-
-/* ─── Dot ─────────────────────────────────────── */
-.timelineDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #465E8A;
-  margin-top: 8px;
-  justify-self: center;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, box-shadow 0.2s;
-}
-
-.timelineItem:hover .timelineDot {
-  transform: scale(1.5);
-  background: #0E224A;
-  box-shadow: 0 0 0 4px rgba(14, 34, 74, 0.1);
+  margin-bottom: 0.25rem;
 }
 
 .timelineDotFeatured {
   width: 12px;
   height: 12px;
   background: #FF6A57;
-  margin-top: 7px;
-}
-
-.timelineItem:hover .timelineDotFeatured {
-  background: #e0553f;
-  box-shadow: 0 0 0 4px rgba(255, 106, 87, 0.12);
+  margin-top: 13px;
 }
 
 :global([data-theme='dark']) .timelineDot {
   background: #7da4d8;
 }
 
-:global([data-theme='dark']) .timelineItem:hover .timelineDot {
+/* Dot précédant un item en hover (sibling selector) */
+.timelineDot:has(+ .timelineItem:hover) {
+  transform: scale(1.5);
+  background: #0E224A;
+  box-shadow: 0 0 0 4px rgba(14, 34, 74, 0.1);
+}
+
+.timelineDotFeatured:has(+ .timelineItem:hover) {
+  background: #e0553f;
+  box-shadow: 0 0 0 4px rgba(255, 106, 87, 0.12);
+}
+
+:global([data-theme='dark']) .timelineDot:has(+ .timelineItem:hover) {
   background: #95b3e0;
+  box-shadow: 0 0 0 4px rgba(125, 164, 216, 0.15);
 }
 
 /* ─── Content ─────────────────────────────────── */
 .timelineBody {
+  flex: 1;
   min-width: 0;
 }
 
