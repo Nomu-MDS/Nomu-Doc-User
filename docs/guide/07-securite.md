@@ -19,10 +19,10 @@ Si vous rencontrez un comportement inapproprié — que ce soit sur un profil ou
 ### Comment signaler ?
 
 1. Accédez au **profil de l'utilisateur** concerné
-2. Appuyez sur le **bouton Signaler** (accessible via le menu `···` ou l'icône de signalement)
-3. Choisissez la **raison du signalement** dans la liste proposée
-4. Ajoutez un **message optionnel** pour préciser le contexte
-5. Validez — votre signalement est transmis à l'équipe Nomu
+2. Faites défiler jusqu'en bas du profil et appuyez sur **Signaler ce profil** (lien discret sous le bouton Contacter)
+3. Un formulaire s'ouvre — saisissez la **raison** du signalement (champ obligatoire)
+4. Ajoutez des **détails optionnels** pour préciser le contexte si nécessaire
+5. Appuyez sur **Signaler** — votre demande est transmise immédiatement à l'équipe Nomu
 
 :::info
 Votre signalement est **confidentiel**. L'utilisateur signalé ne saura pas que c'est vous qui avez effectué le signalement.
