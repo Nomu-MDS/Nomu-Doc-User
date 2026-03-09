@@ -57,6 +57,37 @@ Avant d'envoyer une demande de réservation, échangez quelques messages pour vo
 
 ---
 
+## L'onglet Réservations (calendrier)
+
+Accédez à l'onglet **Réservations** (icône calendrier dans la barre de navigation) pour visualiser et gérer toutes vos réservations.
+
+### Vue calendrier
+
+Le calendrier mensuel affiche un **point coloré** sur chaque jour concerné par une réservation :
+
+| Couleur | Signification |
+|---------|---------------|
+| 🟠 Ambre | Réservation en attente |
+| 🟢 Vert | Réservation acceptée |
+| 🔴 Rouge | Réservation refusée |
+
+Appuyez sur un jour pour afficher le **panneau de détail** en dessous, avec les informations complètes (titre, dates, horaires, durée, prix) et les boutons Accepter / Refuser si la réservation vous est destinée.
+
+### Vue liste
+
+Basculez vers la **vue liste** (icône liste en haut à droite) pour retrouver toutes vos réservations regroupées par mois, triées par date.
+
+### Filtres
+
+Les quatre filtres en haut de page s'appliquent à la fois sur le calendrier et la liste :
+
+- **Toutes** — toutes les réservations
+- **En attente** — demandes en cours
+- **Acceptées** — réservations confirmées
+- **Refusées** — demandes déclinées
+
+---
+
 ## Gérer vos conversations
 
 Depuis l'onglet Messages, toutes vos conversations sont classées par **date du dernier message**.
