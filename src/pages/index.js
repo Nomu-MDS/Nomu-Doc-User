@@ -154,13 +154,13 @@ export default function Home() {
 
         {/* ── Hero photo ── */}
         <div ref={heroRef} className={styles.heroWrap}>
-          <div data-hero-content className={styles.heroContent}>
+          <div data-hero-content className='xl:max-w-[1200px]'>
             <span ref={badgeRef} className={styles.heroBadge}>
               <span className={styles.heroBadgeDot} />
               Guide d'utilisation
             </span>
 
-            <h1 ref={titleRef} className={styles.heroTitle}>
+            <h1 ref={titleRef} className={`${styles.heroTitle}`}>
               <span className={styles.titleLineWrap}>
                 <span data-line className={styles.titleLine}>Partagez votre ville.</span>
               </span>

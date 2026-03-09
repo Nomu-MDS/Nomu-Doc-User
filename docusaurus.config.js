@@ -1,8 +1,22 @@
 // @ts-check
 import {themes as prismThemes} from 'prism-react-renderer';
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  plugins: [
+    async function tailwindPlugin() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
   title: 'Nomu',
   tagline: 'Guide d\'utilisation de la plateforme Nomu.',
   favicon: 'img/favicon.ico',
