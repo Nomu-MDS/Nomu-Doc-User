@@ -1,0 +1,401 @@
+/* ─── Page wrapper ────────────────────────────── */
+.page {
+  background: #E4DBCB;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+:global([data-theme='dark']) .page {
+  background: #111827;
+}
+
+/* ─── Hero photo ──────────────────────────────── */
+.heroWrap {
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: calc(88vh - var(--ifm-navbar-height, 60px));
+  background-image:
+    linear-gradient(to right, rgba(14, 34, 74, 0.82) 0%, rgba(14, 34, 74, 0.45) 45%, transparent 72%),
+    linear-gradient(to top,   rgba(14, 34, 74, 0.65) 0%, transparent 55%),
+    url('/img/hero.jpg');
+  background-size: cover;
+  background-position: 58% 35%;
+  display: flex;
+  align-items: flex-end;
+  padding: 3.5rem 4rem 4.5rem;
+}
+
+:global([data-theme='dark']) .heroWrap {
+  background-image:
+    linear-gradient(to right, rgba(5, 12, 28, 0.90) 0%, rgba(5, 12, 28, 0.55) 45%, transparent 72%),
+    linear-gradient(to top,   rgba(5, 12, 28, 0.75) 0%, transparent 55%),
+    url('/img/hero.jpg');
+}
+
+.heroContent {
+  max-width: 560px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(228, 219, 203, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(228, 219, 203, 0.15);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.heroBadgeDot {
+  width: 5px;
+  height: 5px;
+  background: #FF6A57;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  font-family: 'roca', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  color: #E4DBCB;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+  line-height: 1.08;
+}
+
+.titleLineWrap {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.titleLine {
+  display: block;
+}
+
+.heroTitleMuted {
+  color: rgba(228, 219, 203, 0.5);
+}
+
+.heroSub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(228, 219, 203, 0.72);
+  line-height: 1.75;
+  margin: 0 0 2.25rem;
+  max-width: 440px;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #E4DBCB;
+  color: #0E224A !important;
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.875rem 1.875rem;
+  border-radius: 9999px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+}
+
+.ctaPrimary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(228, 219, 203, 0.8) !important;
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.875rem 1.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(228, 219, 203, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #E4DBCB !important;
+  border-color: rgba(228, 219, 203, 0.4);
+}
+
+/* ─── Guide section ───────────────────────────── */
+.cardsWrap {
+  background: #F0EDE6;
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3rem;
+}
+
+:global([data-theme='dark']) .cardsWrap {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cardsHeader {
+  margin-bottom: 2.25rem;
+}
+
+.cardsSectionLabel {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(70, 94, 138, 0.6);
+  margin-bottom: 0.4rem;
+}
+
+:global([data-theme='dark']) .cardsSectionLabel {
+  color: rgba(125, 164, 216, 0.5);
+}
+
+.cardsSectionTitle {
+  font-family: 'roca', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #0E224A;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+:global([data-theme='dark']) .cardsSectionTitle {
+  color: #e2e8f0;
+}
+
+/* ─── Timeline ────────────────────────────────── */
+.timeline {
+  position: relative;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 17px;
+  top: 14px;
+  bottom: 14px;
+  width: 1.5px;
+  background: rgba(70, 94, 138, 0.18);
+  transform-origin: top center;
+}
+
+:global([data-theme='dark']) .timelineLine {
+  background: rgba(125, 164, 216, 0.15);
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 0.75rem 1rem 2rem 0;
+  text-decoration: none !important;
+  border-radius: 14px;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0.75rem;
+}
+
+.timelineItem:hover {
+  background: rgba(70, 94, 138, 0.05);
+}
+
+:global([data-theme='dark']) .timelineItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.timelineItemFeatured {
+  margin-bottom: 0.5rem;
+}
+
+/* ─── Dot ─────────────────────────────────────── */
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #465E8A;
+  margin-top: 8px;
+  justify-self: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, box-shadow 0.2s;
+}
+
+.timelineItem:hover .timelineDot {
+  transform: scale(1.5);
+  background: #0E224A;
+  box-shadow: 0 0 0 4px rgba(14, 34, 74, 0.1);
+}
+
+.timelineDotFeatured {
+  width: 12px;
+  height: 12px;
+  background: #FF6A57;
+  margin-top: 7px;
+}
+
+.timelineItem:hover .timelineDotFeatured {
+  background: #e0553f;
+  box-shadow: 0 0 0 4px rgba(255, 106, 87, 0.12);
+}
+
+:global([data-theme='dark']) .timelineDot {
+  background: #7da4d8;
+}
+
+:global([data-theme='dark']) .timelineItem:hover .timelineDot {
+  background: #95b3e0;
+}
+
+/* ─── Content ─────────────────────────────────── */
+.timelineBody {
+  min-width: 0;
+}
+
+.timelineEyebrow {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF6A57;
+  margin-bottom: 0.3rem;
+}
+
+.timelineNum {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(70, 94, 138, 0.4);
+  margin-bottom: 0.3rem;
+}
+
+:global([data-theme='dark']) .timelineNum {
+  color: rgba(125, 164, 216, 0.4);
+}
+
+.timelineTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0E224A;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+
+.timelineItemFeatured .timelineTitle {
+  font-size: 1.1rem;
+}
+
+.timelineItem:hover .timelineTitle {
+  color: #465E8A;
+}
+
+:global([data-theme='dark']) .timelineTitle {
+  color: #e2e8f0;
+}
+
+:global([data-theme='dark']) .timelineItem:hover .timelineTitle {
+  color: #7da4d8;
+}
+
+.timelineDesc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.845rem;
+  color: rgba(70, 94, 138, 0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+
+:global([data-theme='dark']) .timelineDesc {
+  color: rgba(148, 163, 184, 0.8);
+}
+
+/* ─── Arrow ───────────────────────────────────── */
+.timelineArrow {
+  margin-top: 8px;
+  color: #465E8A;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.timelineItem:hover .timelineArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+:global([data-theme='dark']) .timelineArrow {
+  color: #7da4d8;
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media (max-width: 768px) {
+  .heroWrap {
+    min-height: 75vh;
+    padding: 2.5rem 2rem 3rem;
+    background-position: 65% 35%;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroWrap {
+    border-radius: 20px;
+    min-height: 80vh;
+    padding: 2rem 1.75rem 2.5rem;
+  }
+
+  .cardsWrap {
+    padding: 2rem 1.25rem 2.5rem;
+    border-radius: 20px;
+  }
+
+  .timelineItem {
+    grid-template-columns: 30px 1fr auto;
+    gap: 1rem;
+  }
+
+  .timelineLine {
+    left: 14px;
+  }
+}
