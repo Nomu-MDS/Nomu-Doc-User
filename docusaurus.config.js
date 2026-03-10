@@ -126,6 +126,21 @@ const config = {
               {label: 'Support', href: 'mailto:support@nomu.app'},
             ],
           },
+          {
+            title: 'Télécharger',
+            items: [
+              {
+                html: `<a href="https://github.com/Nomu-MDS" target="_blank" rel="noopener" aria-label="App Store">
+                  <img src="/img/Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg" alt="Télécharger sur l'App Store" style="width:130px;height:auto;opacity:0.85;display:block;margin-bottom:8px" />
+                </a>`,
+              },
+              {
+                html: `<a href="https://files.charlesremy.dev/nomu/application-54e08593-c67a-45bf-a8c0-54a0bc61510e.apk" target="_blank" rel="noopener" aria-label="Google Play">
+                  <img src="/img/Google_Play_Store_badge_FR.svg" alt="Disponible sur Google Play" style="width:130px;height:auto;opacity:0.85;display:block" />
+                </a>`,
+              },
+            ],
+          },
         ],
         copyright: `© ${new Date().getFullYear()} Nomu`,
       },
