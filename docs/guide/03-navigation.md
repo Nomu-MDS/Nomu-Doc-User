@@ -13,6 +13,14 @@ L'application Nomu est organisée autour de **5 onglets principaux**, accessible
 - La **barre de navigation flottante** en bas de l'écran sur mobile
 - Le **menu latéral** sur la version web
 
+**Mobile**
+
+<img src="/img/mobile/mobile-navigation-and-home.png" alt="Navigation et accueil mobile" style={{maxWidth: '220px', display: 'block', margin: '16px 0'}} />
+
+**Web**
+
+<img src="/img/web/web-home-navigation.png" alt="Navigation et accueil web" style={{maxWidth: '600px', display: 'block', margin: '16px 0'}} />
+
 ---
 
 ### Accueil
@@ -38,10 +46,6 @@ Utilisez cet onglet pour rechercher des locaux avant un voyage ou des voyageurs 
 ### Réservations
 
 Retrouvez et suivez l'ensemble de vos **demandes de rencontre**.
-
-:::info Fonctionnalité en cours de déploiement
-La gestion centralisée des réservations est en cours de déploiement. En attendant, vos réservations sont accessibles directement depuis vos conversations dans l'onglet Messages.
-:::
 
 [En savoir plus sur la messagerie et les réservations](./05-messagerie)
 

@@ -24,6 +24,14 @@ Si vous rencontrez un comportement inapproprié — que ce soit sur un profil ou
 4. Ajoutez des **détails optionnels** pour préciser le contexte si nécessaire
 5. Appuyez sur **Signaler** — votre demande est transmise immédiatement à l'équipe Nomu
 
+**Mobile**
+
+<img src="/img/mobile/mobile-profile-report.png" alt="Signaler un profil mobile" style={{maxWidth: '220px', display: 'block', margin: '16px 0'}} />
+
+**Web**
+
+<img src="/img/web/web-profile-report.png" alt="Signaler un profil web" style={{maxWidth: '600px', display: 'block', margin: '16px 0'}} />
+
 :::info
 Votre signalement est **confidentiel**. L'utilisateur signalé ne saura pas que c'est vous qui avez effectué le signalement.
 :::
